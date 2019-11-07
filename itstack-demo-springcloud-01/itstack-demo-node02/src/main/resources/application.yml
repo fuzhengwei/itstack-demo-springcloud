@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: itstack-demo-eureka-server
+
+server:
+  port: 8082
+
+eureka:
+  instance:
+    hostname: node02
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://node03:8083/eureka/,http://node01:8081/eureka/
