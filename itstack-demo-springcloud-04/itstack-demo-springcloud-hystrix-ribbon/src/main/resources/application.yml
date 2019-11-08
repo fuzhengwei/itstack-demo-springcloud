@@ -1,0 +1,17 @@
+server:
+  port: 9002
+
+spring:
+  application:
+    name: itstack-demo-springcloud-ribbon
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7397/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: hystrix.stream
