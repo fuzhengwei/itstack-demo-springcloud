@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: itstack-demo-springcloud-turbine
+
+server:
+  port: 8080
+
+management:
+  port: 8081
+
+## 服务注册中心
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7397/eureka
+
+## 监控汇总配置，这里配置2个应用逗号隔开
+turbine:
+  app-config: itstack-demo-springcloud-feign,itstack-demo-springcloud-ribbon
+  cluster-name-expression: new String("default")
+  combine-host-port: true

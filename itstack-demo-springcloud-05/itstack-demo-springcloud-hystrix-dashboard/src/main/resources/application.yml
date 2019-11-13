@@ -1,0 +1,6 @@
+server:
+  port: 8989
+
+spring:
+  application:
+    name: itstack-demo-springcloud-hystrix-dashboard
