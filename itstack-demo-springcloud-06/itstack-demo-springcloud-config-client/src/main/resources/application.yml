@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: itstack-demo-springcloud-config-client
+server:
+  port: 9001
+
+# /actuator/refresh 这个 Endpoint 暴露出来
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
