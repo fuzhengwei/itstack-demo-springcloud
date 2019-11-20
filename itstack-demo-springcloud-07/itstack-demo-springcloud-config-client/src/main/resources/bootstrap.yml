@@ -1,0 +1,21 @@
+spring:
+  cloud:
+    config:
+      name: config-client         # 对应 {application} 部分，例如；config-client-dev = 只取最后一个符号'-'之前的
+      profile: dev                # 对应 {profile} 部分
+      label: master               # 对应 {label} 部分，即 Git 的分支。如果配置中心使用的是本地存储，则该参数无用
+      discovery:
+        enabled: true             # 开启 config 服务发现支持
+        service-id: itstack-demo-springcloud-config-server        # 配置服务name
+
+#配置文件会被转换成 Web，访问规则如下；
+#/{application}/{profile}[/{label}]
+#/{application}-{profile}.yml
+#/{label}/{application}-{profile}.yml
+#/{application}-{profile}.properties
+#/{label}/{application}-{profile}.properties
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7397/eureka/
