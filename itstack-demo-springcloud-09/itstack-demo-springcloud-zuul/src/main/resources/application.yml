@@ -1,0 +1,24 @@
+server:
+  port: 10001
+
+spring:
+  application:
+    name: itstack-demo-ddd-zuul
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:7397/eureka/
+
+# 动态路由，以下配置注释；
+# http://localhost:10001/route-a/api/queryUserInfo?userId=111
+# http://localhost:10001/route-b/api/queryUserInfo?userId=111
+zuul:
+   ignoredPatterns: /api/**
+#  routes:
+#    api-a:
+#      path: /route-a/**
+#      serviceId: itstack-demo-springcloud-feign
+#    api-b:
+#      path: /route-b/**
+#      serviceId: itstack-demo-springcloud-ribbon
